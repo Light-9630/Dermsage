@@ -56,7 +56,7 @@ if uploaded_image is not None:
 st.markdown(
     """
     <div style='border: 2px solid red; padding: 10px;'>
-        <p><strong>Note:</strong> This model is under development, and its accuracy is around 70%. Results may vary.</p>
+        <p><strong>Note:</strong>Note: The AI model used in this application is under development, and its accuracy is around 70%. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p>
     </div>
     """,
     unsafe_allow_html=True
