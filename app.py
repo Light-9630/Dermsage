@@ -8,6 +8,17 @@ model = tf.keras.models.load_model("trained_model.h5")
 
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage - Skin Disease Detection</h1>", unsafe_allow_html=True)
+
+# Note about the model (Highlighted Box)
+st.markdown(
+    """
+    <div style='background-color:#FFFF00; padding: 10px; text-align: center;'>
+    <p style='font-size: 18px; color: #333;'>Note: The AI model used in this application is under development, and its accuracy is around 70%. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
 # Get user's name and age
@@ -66,10 +77,6 @@ if uploaded_image is not None:
     # Display description for the predicted class
     if predicted_class in class_descriptions:
         st.markdown(f"<p style='font-size: 16px; color: #333; text-align: center;'>{class_descriptions[predicted_class]}</p>", unsafe_allow_html=True)
-
-# Note about the model
-st.sidebar.markdown("<h2>Note:</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<p>The AI model used in this application is under development, and its accuracy is around 70%. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p>", unsafe_allow_html=True)
 
 # About Dermsage
 st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
