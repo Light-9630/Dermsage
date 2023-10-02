@@ -38,8 +38,8 @@ if uploaded_image is not None:
     prediction = model.predict(image_for_prediction)
             
     # Display the prediction
-    image_1= image.resize((150, 150))
-    st.image(image_1, caption="Uploaded Image", use_column_width=True)
+    # image_1= image.resize((150, 150))
+    st.image(image_1, caption="Uploaded Image",width=150, use_column_width=True)
     st.success("Prediction Complete!")
     class_names = [
     "Acne",
