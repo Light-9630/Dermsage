@@ -6,14 +6,14 @@ import tensorflow as tf
 # Load the CNN model
 model = tf.keras.models.load_model("trained_model.h5")
 
-# Hiding GitHub logo
-hidden = """ <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hidden, unsafe_allow_html=True)
+# # Hiding GitHub logo
+# hidden = """ <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             header {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(hidden, unsafe_allow_html=True)
 # Dermsage logo and Title
 
 with open("logo_streamlit.jpg", "rb") as image_file:
