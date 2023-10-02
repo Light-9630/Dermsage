@@ -16,11 +16,9 @@ model = tf.keras.models.load_model("trained_model.h5")
 # st.markdown(hidden, unsafe_allow_html=True)
 # Dermsage logo and Title
 
-with open("logo_streamlit.jpg", "rb") as image_file:
-    image_data = image_file.read()
-
-# # Display the image with the correct content
-# st.image(image_data,use_column_width=True)
+# Load the Dermsage logo image
+with open("logo_streamlit.jpg", "rb") as logo_image_file:
+    logo_image_data = logo_image_file.read()
 
 # Load the Dermsage logo icon
 with open("dermsage_icon.png", "rb") as icon_image_file:
@@ -29,12 +27,17 @@ with open("dermsage_icon.png", "rb") as icon_image_file:
 # Create a layout with two columns: one for the logo and one for the icon
 col1, col2 = st.columns([4, 1])
 
-# Display the Dermsage logo image in the first column
-col1.image(image_data, use_column_width=True)
+# Center-align content in the first column (logo)
+with col1:
+    st.image(logo_image_data, use_column_width=True)
+    st.write("", "", "")  # Add empty lines to center-align vertically
 
-# Display the icon in the second column
-col2.image(icon_image_data, use_column_width=True)
+# Center-align content in the second column (icon)
+with col2:
+    st.image(icon_image_data, use_column_width=True)
+    st.write("", "", "")  # Add empty lines to center-align vertically
 
+# ... (rest of your code) ...
 
 
 # # Title and Description
