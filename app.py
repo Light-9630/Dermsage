@@ -64,27 +64,19 @@ if uploaded_image is not None:
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'>The image you uploaded is classified as:</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
-    # Two-liner descriptions for class labels
+    # Brief explanation about the predicted class
     class_descriptions = [
-        "Acne and Rosacea: Description about Acne and Rosacea.",
-        "Eczema: Description about Eczema.",
-        "Normal: Description about Normal skin.",
-        "Psoriasis pictures Lichen Planus and related diseases: Description about Psoriasis and related diseases.",
-        "Tinea Ringworm Candidiasis and other Fungal Infections: Description about Fungal Infections.",
-        "Vitiligo: Description about Vitiligo."
+        "Acne and Rosacea: Acne is a common skin condition that causes pimples and other blemishes. Rosacea is a chronic skin condition that causes redness and visible blood vessels on the face.",
+        "Eczema: Eczema is a condition that causes the skin to become red, itchy, and inflamed. It often appears as dry, scaly patches on the skin.",
+        "Normal: This image appears to be of normal skin with no signs of any specific skin condition.",
+        "Psoriasis pictures Lichen Planus and related diseases: Psoriasis is a chronic skin condition that causes cells to build up rapidly on the surface of the skin. Lichen Planus is an inflammatory skin condition. Both can cause rashes and skin lesions.",
+        "Tinea Ringworm Candidiasis and other Fungal Infections: These are fungal skin infections that can cause itching, redness, and rashes on the skin.",
+        "Vitiligo: Vitiligo is a long-term skin condition characterized by patches of the skin losing their pigment. This results in the appearance of white patches on the skin."
     ]
-
-    # Show two-liner descriptions
-    st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Class Descriptions:</h2>", unsafe_allow_html=True)
-    for i, description in enumerate(class_descriptions):
-        st.markdown(f"<p style='font-size: 18px; color: #333; text-align: left;'><strong>{class_names[i]}:</strong> {description}</p>", unsafe_allow_html=True)
-
-    # Description of the predicted class
-    predicted_class_description = class_descriptions[predicted_class_index]
 
     # Show description of the predicted class
     st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Description of Predicted Class:</h2>", unsafe_allow_html=True)
-    st.markdown(f"<p style='font-size: 18px; color: #333; text-align: left;'>{predicted_class_description}</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 18px; color: #333; text-align: left;'>{class_descriptions[predicted_class_index]}</p>", unsafe_allow_html=True)
 
 # Note
 st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
