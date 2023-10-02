@@ -11,8 +11,18 @@ model = tf.keras.models.load_model("trained_model.h5")
 with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
-st.image(icon_image_data, use_column_width=True, style={'border-radius': '50%'})
+st.markdown(
+    f"""
+    <style>
+    img.rounded {{
+        border-radius: 50%;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
+st.image(icon_image_data, use_column_width=True, output_format='PNG', unsafe_allow_html=True)
 # Title and Description
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
