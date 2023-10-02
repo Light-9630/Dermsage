@@ -7,14 +7,14 @@ import tensorflow as tf
 model = tf.keras.models.load_model("trained_model.h5")
 
 #Showing the logo
-
 with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
-    
+
+# Add CSS for a rounded image
 st.markdown(
     """
     <style>
-    .rounded-image {
+    .rounded-image img {
         border-radius: 50%;
         overflow: hidden;
     }
@@ -23,11 +23,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Wrap the image in a div with the rounded-image class
-st.write(
-    f'<div class="rounded-image"><img src="data:image/png;base64,{icon_image_data.decode()}" alt="Dermsage Logo" /></div>',
-    unsafe_allow_html=True
-)
+# Wrap the image in a div with the rounded-image class and apply CSS
+st.image(icon_image_data, use_column_width=True, output_format='PNG', caption="Dermsage Logo", unsafe_allow_html=True, key='rounded_image')
 
 # Title and Description
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
