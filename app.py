@@ -16,7 +16,7 @@ model = tf.keras.models.load_model("trained_model.h5")
 # st.markdown(hidden, unsafe_allow_html=True)
 # Dermsage logo and Title
 
-with open("dermsage_icon.png", "rb") as icon_image_file:
+with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
 st.image(icon_image_data, use_column_width=True)
