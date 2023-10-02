@@ -36,25 +36,26 @@ if uploaded_image is not None:
 
     # Display the prediction
     st.success("Prediction Complete!")
-    class_names = [
-        "Acne and Rosacea",
+    
+    class_labels = [
+        "Acne / Rosacea",
         "Eczema",
-        "Normal",
-        "Psoriasis pictures Lichen Planus and related diseases",
-        "Tinea Ringworm Candidiasis and other Fungal Infections",
+        "Normal Skin",
+        "Psoriasis / Lichen Planus",
+        "Fungal Infections",
         "Vitiligo"
     ]
 
     # Display the prediction and description
-    predicted_class = class_names[np.argmax(prediction)]
+    predicted_class = class_labels[np.argmax(prediction)]
 
     class_descriptions = {
-        "Acne and Rosacea": "This category includes skin conditions characterized by pimples, redness, and inflammation, such as acne and rosacea.",
-        "Eczema": "Eczema encompasses various forms of dermatitis that cause itchy and inflamed skin.",
-        "Normal": "The image you uploaded shows normal, healthy skin without any specific skin conditions.",
-        "Psoriasis pictures Lichen Planus and related diseases": "This category covers skin conditions like psoriasis, lichen planus, and related diseases known for their distinctive rashes and scales.",
-        "Tinea Ringworm Candidiasis and other Fungal Infections": "This category includes fungal skin infections like ringworm and candidiasis, known for their itchy and contagious nature.",
-        "Vitiligo": "Vitiligo is a condition where the skin loses its pigmentation, resulting in white patches, which can affect any part of the body."
+        "Acne / Rosacea": "Skin condition characterized by pimples and redness.",
+        "Eczema": "Inflammatory skin condition causing itchiness and rash.",
+        "Normal Skin": "No specific skin conditions detected.",
+        "Psoriasis / Lichen Planus": "Skin conditions with distinctive rashes and scales.",
+        "Fungal Infections": "Fungal skin infections like ringworm and candidiasis.",
+        "Vitiligo": "Skin pigmentation loss resulting in white patches."
     }
 
     st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Result:</h2>", unsafe_allow_html=True)
