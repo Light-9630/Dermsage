@@ -16,6 +16,8 @@ hidden = """ <style>
 st.markdown(hidden, unsafe_allow_html=True)
 
 # Dermsage logo and Title
+image = open("logo_streamlit.jpg", "rb")
+st.image(image, use_column_width=True)
 
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
