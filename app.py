@@ -51,7 +51,7 @@ if uploaded_image is not None:
     "Acne",
     "Eczema",
     "Normal Skin",
-    "Psoriasis & Lichen Planus",
+    "Psoriasis/Lichen Planus",
     "Fungal Infections",
     "Vitiligo"
 ]
