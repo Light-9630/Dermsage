@@ -2,25 +2,8 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import tensorflow as tf
-# import os
-# import requests
 
-# # Define the URL of the model
-# model_url = 'https://github.com/Light-9630/Dermsage/raw/main/trained_model.h5'
-# model_file_path = 'trained_model.h5'
-
-# # Download the model file if it doesn't exist in the local directory
-# if not os.path.isfile(model_file_path):
-#     with open(model_file_path, 'wb') as model_file:
-#         response = requests.get(model_url)
-#         model_file.write(response.content)
-
-# # Load your trained CNN model 
-# @st.cache
-# def load_model():
-#     return tf.keras.models.load_model(model_file_path)
-
-# Load the model at app startup
+#load the cnn model
 model = tf.keras.models.load_model("trained_model.h5")
 
 # Title and Description
