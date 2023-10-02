@@ -8,21 +8,8 @@ model = tf.keras.models.load_model("trained_model.h5")
 with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
-# Load the logo image
-logo_image = Image.open("logo_1.png")
-logo_image = ImageOps.fit(logo_image, (150, 150), method=0, bleed=0.0, centering=(0.5, 0.5))
-
-# Create a rounded mask for the logo image
-mask = Image.new("L", (150, 150), 0)
-draw = ImageDraw.Draw(mask)
-draw.ellipse((0, 0, 150, 150), fill=255)
-
-# Apply the mask to the logo image
-rounded_logo = Image.new("RGBA", (150, 150))
-rounded_logo.paste(logo_image, (0, 0), mask)
-
-# Display the rounded logo image
-st.image(rounded_logo, caption="Dermsage Logo", use_column_width=True)
+# Display the logo image
+st.image(icon_image_data, caption="Dermsage Logo", use_column_width=True)
 
 
 # Title and Description
