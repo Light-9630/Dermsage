@@ -16,39 +16,14 @@ model = tf.keras.models.load_model("trained_model.h5")
 # st.markdown(hidden, unsafe_allow_html=True)
 # Dermsage logo and Title
 
-
-st.sidebar.markdown("To change the theme, go to 'Settings' on the top right and select your preferred theme (light or dark).")
-
-# ... (rest of your code) ...
-
-
-# Load the Dermsage logo image
-with open("logo_streamlit.jpg", "rb") as logo_image_file:
-    logo_image_data = logo_image_file.read()
-
-# Load the Dermsage logo icon
 with open("dermsage_icon.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
-# Create a layout with two columns: one for the logo and one for the icon
-col1, col2 = st.columns([4, 1])
-
-# Center-align content in the first column (logo)
-with col1:
-    st.image(logo_image_data, use_column_width=True)
-    st.write("", "", "")  # Add empty lines to center-align vertically
-
-# Center-align content in the second column (icon)
-with col2:
-    st.image(icon_image_data, use_column_width=True)
-    st.write("", "", "")  # Add empty lines to center-align vertically
-
-# ... (rest of your code) ...
+st.image(icon_image_data, use_column_width=True)
+   
 
 
-# # Title and Description
-# st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
-# st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Diagnosis</h2>", unsafe_allow_html=True)
+# Title and Description
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
 # Get user's name
