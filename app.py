@@ -19,8 +19,8 @@ model = tf.keras.models.load_model("trained_model.h5")
 with open("logo_streamlit.jpg", "rb") as image_file:
     image_data = image_file.read()
 
-# Display the image with the correct content
-st.image(image_data,use_column_width=True)
+# # Display the image with the correct content
+# st.image(image_data,use_column_width=True)
 
 # Load the Dermsage logo icon
 with open("dermsage_icon.png", "rb") as icon_image_file:
