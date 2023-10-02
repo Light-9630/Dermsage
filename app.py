@@ -39,7 +39,7 @@ if uploaded_image is not None:
             
     # Display the prediction
     # image_1= image.resize((150, 150))
-    st.image(image, caption="Uploaded Image",width=150, use_column_width=True)
+    st.image(image, caption="Uploaded Image",use_column_width=True)
     st.success("Prediction Complete!")
     class_names = [
     "Acne",
