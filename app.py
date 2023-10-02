@@ -24,6 +24,8 @@ st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcom
 
 # Note
 st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
+
+
 # Get user's name
 user_name = st.text_input("Enter your name:")
 
