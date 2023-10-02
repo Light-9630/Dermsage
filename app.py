@@ -14,6 +14,7 @@ hidden=""" <style>
             header {visibility: hidden;}
             </style>
             """
+st.markdown(hidden, unsafe_allow_html=True)
 
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
