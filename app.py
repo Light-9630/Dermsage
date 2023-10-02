@@ -16,8 +16,11 @@ model = tf.keras.models.load_model("trained_model.h5")
 # st.markdown(hidden, unsafe_allow_html=True)
 # Dermsage logo and Title
 
-# Set the default theme to "light"
-st.set_page_config(page_title="Dermsage App", page_icon=None, layout="wide", theme="light")
+
+st.sidebar.markdown("To change the theme, go to 'Settings' on the top right and select your preferred theme (light or dark).")
+
+# ... (rest of your code) ...
+
 
 # Load the Dermsage logo image
 with open("logo_streamlit.jpg", "rb") as logo_image_file:
