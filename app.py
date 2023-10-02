@@ -21,7 +21,7 @@ import tensorflow as tf
 #     return tf.keras.models.load_model(model_file_path)
 
 # Load the model at app startup
-model = tf.keras.models.load_model('https://github.com/Light-9630/Dermsage/raw/main/trained_model.h5')
+model = tf.keras.models.load_model("trained_model.h5")
 
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage - Skin Disease Detection</h1>", unsafe_allow_html=True)
