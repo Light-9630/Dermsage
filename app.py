@@ -23,7 +23,6 @@ st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcom
 
 # Get user's name and age
 user_name = st.text_input("Enter your name:")
-user_age = st.number_input("Enter your age:", min_value=1)  # Set min_value to 1 to remove the placeholder
 
 # Upload Image
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
