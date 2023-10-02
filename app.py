@@ -104,4 +104,7 @@ st.markdown(
     .sidebar p {
         color: #333;
     }
-    </
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
