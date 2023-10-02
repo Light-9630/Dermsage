@@ -6,9 +6,8 @@ import tensorflow as tf
 # Load the CNN model
 model = tf.keras.models.load_model("trained_model.h5")
 
-#Hiding GIThub logo
-
-hidden=""" <style>
+# Hiding GitHub logo
+hidden = """ <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
@@ -18,7 +17,6 @@ st.markdown(hidden, unsafe_allow_html=True)
 
 # Dermsage logo and Title
 
-
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Diagnosis</h2>", unsafe_allow_html=True)
@@ -26,7 +24,6 @@ st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcom
 
 # Get user's name
 user_name = st.text_input("Enter your name:")
-
 
 # Upload Image
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
@@ -61,13 +58,36 @@ if uploaded_image is not None:
 
     # Display the prediction
     st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Result:</h2>", unsafe_allow_html=True)
-    predicted_class = class_names[np.argmax(prediction)]
+    predicted_class_index = np.argmax(prediction)
+    predicted_class = class_names[predicted_class_index]
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>Hi {user_name},</strong></p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'>The image you uploaded is classified as:</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
+    # Two-liner descriptions for class labels
+    class_descriptions = [
+        "Acne and Rosacea: Description about Acne and Rosacea.",
+        "Eczema: Description about Eczema.",
+        "Normal: Description about Normal skin.",
+        "Psoriasis pictures Lichen Planus and related diseases: Description about Psoriasis and related diseases.",
+        "Tinea Ringworm Candidiasis and other Fungal Infections: Description about Fungal Infections.",
+        "Vitiligo: Description about Vitiligo."
+    ]
+
+    # Show two-liner descriptions
+    st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Class Descriptions:</h2>", unsafe_allow_html=True)
+    for i, description in enumerate(class_descriptions):
+        st.markdown(f"<p style='font-size: 18px; color: #333; text-align: left;'><strong>{class_names[i]}:</strong> {description}</p>", unsafe_allow_html=True)
+
+    # Description of the predicted class
+    predicted_class_description = class_descriptions[predicted_class_index]
+
+    # Show description of the predicted class
+    st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Description of Predicted Class:</h2>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 18px; color: #333; text-align: left;'>{predicted_class_description}</p>", unsafe_allow_html=True)
+
 # Note
-st.markdown("<div style='border: 2px solid red; padding: 7px;'><p><strong>Note:</strong>The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
+st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
 
 # About Dermsage
 st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
