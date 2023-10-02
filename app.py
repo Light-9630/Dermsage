@@ -2,21 +2,23 @@ import streamlit as st
 from PIL import Image, ImageDraw, ImageOps
 import numpy as np
 import tensorflow as tf
+import time
 
 # Load the CNN model
 model = tf.keras.models.load_model("trained_model.h5")
+
+#Logo
 with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
 # Display the logo image
 st.image(icon_image_data, use_column_width=True)
 
-
 # Title and Description
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
 # Get user's name
-st.markdown("<br>",unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 user_name = st.text_input("Enter your name:")
 
 # Upload Image
@@ -34,20 +36,21 @@ if uploaded_image is not None:
     image_for_prediction = np.expand_dims(image_for_prediction, axis=0)
 
     # Make predictions
-    prediction = model.predict(image_for_prediction)
-            
-    # Display the prediction
-    # image_1= image.resize((150, 150))
-    st.image(image, caption="Uploaded Image",use_column_width=True)
+    with st.spinner("Processing image..."):
+        prediction = model.predict(image_for_prediction)
+        time.sleep(2)  # Simulate image processing
+
+    # Hide the spinner
     st.success("Prediction Complete!")
+
     class_names = [
-    "Acne",
-    "Eczema",
-    "Normal Skin",
-    "Psoriasis/Lichen Planus",
-    "Fungal Infections",
-    "Vitiligo"
-]
+        "Acne",
+        "Eczema",
+        "Normal Skin",
+        "Psoriasis/Lichen Planus",
+        "Fungal Infections",
+        "Vitiligo"
+    ]
 
     # Display the prediction
     st.markdown("<h3 style='text-align: center; color: #0CAFFF;'>Result</h3>", unsafe_allow_html=True)
@@ -107,4 +110,3 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
