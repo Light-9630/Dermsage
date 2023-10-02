@@ -57,12 +57,12 @@ if uploaded_image is not None:
     ]
 
     # Display the prediction
-    st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Result:</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: #0CAFFF;'>Result</h3>", unsafe_allow_html=True)
     predicted_class_index = np.argmax(prediction)
     predicted_class = class_names[predicted_class_index]
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>Hi {user_name},</strong></p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'>The image you uploaded is classified as:</p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 24px; color: black; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
     # Brief explanation about the predicted class
     class_descriptions = [
