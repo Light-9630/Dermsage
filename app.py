@@ -16,7 +16,7 @@ hidden = """ <style>
 st.markdown(hidden, unsafe_allow_html=True)
 
 # Dermsage logo and Title
-image = open("logo_streamlit.png", "rb")
+image = open("logo_streamlit.jpg", "rb")
 st.image(image, use_column_width=True)
 
 # Title and Description
