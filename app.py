@@ -23,7 +23,7 @@ st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Di
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
 # Note
-st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
+st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p><br></div>", unsafe_allow_html=True)
 
 
 # Get user's name
