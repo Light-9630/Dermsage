@@ -5,26 +5,25 @@ import tensorflow as tf
 
 # Load the CNN model
 model = tf.keras.models.load_model("trained_model.h5")
-
-#Showing the logo
 with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
-# Add CSS for a rounded image
-st.markdown(
-    """
-    <style>
-    .rounded-image img {
-        border-radius: 50%;
-        overflow: hidden;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# Load the logo image
+logo_image = Image.open("logo_1.png")
+logo_image = ImageOps.fit(logo_image, (150, 150), method=0, bleed=0.0, centering=(0.5, 0.5))
 
-# Wrap the image in a div with the rounded-image class and apply CSS
-st.image(icon_image_data, use_column_width=True, output_format='PNG', caption="Dermsage Logo", unsafe_allow_html=True, key='rounded_image')
+# Create a rounded mask for the logo image
+mask = Image.new("L", (150, 150), 0)
+draw = ImageDraw.Draw(mask)
+draw.ellipse((0, 0, 150, 150), fill=255)
+
+# Apply the mask to the logo image
+rounded_logo = Image.new("RGBA", (150, 150))
+rounded_logo.paste(logo_image, (0, 0), mask)
+
+# Display the rounded logo image
+st.image(rounded_logo, caption="Dermsage Logo", use_column_width=True)
+
 
 # Title and Description
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
