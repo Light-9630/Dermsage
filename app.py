@@ -14,13 +14,6 @@ st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcom
 # Get user's name
 user_name = st.text_input("Enter your name:")
 
-#hiding logo
-hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 # Upload Image
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
