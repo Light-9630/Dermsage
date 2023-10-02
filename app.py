@@ -22,6 +22,8 @@ st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsa
 st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Diagnosis</h2>", unsafe_allow_html=True)
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
+# Note
+st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
 # Get user's name
 user_name = st.text_input("Enter your name:")
 
@@ -77,8 +79,6 @@ if uploaded_image is not None:
     # Show description of the predicted class
     st.markdown(f"<p style='font-size: 18px; color: #333; text-align: left;'><b>Description:</b>{class_descriptions[predicted_class_index]}</p>", unsafe_allow_html=True)
 
-# Note
-st.markdown("<div style='border: 2px solid red; padding: 7px; margin-top: 20px;'><p><strong>Note:</strong> The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
 
 # About Dermsage
 st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
