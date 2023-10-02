@@ -7,19 +7,11 @@ import tensorflow as tf
 model = tf.keras.models.load_model("trained_model.h5")
 
 #Hiding GIThub logo
-st.markdown(
-    """
-    <style>
-    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+st.markdown("<style>
+    .css-1jc7ptx, .e1ewe7hr3,.viewerBadge_container__1QSob,
     .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-    .viewerBadge_text__1JaDK {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
+    .viewerBadge_text__1JaDK {display: none;}
+    </style>",unsafe_allow_html=True)
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Diagnosis</h2>", unsafe_allow_html=True)
