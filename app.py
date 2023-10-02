@@ -8,6 +8,9 @@ model = tf.keras.models.load_model("trained_model.h5")
 
 #Showing the logo
 
+with open("logo_1.png", "rb") as icon_image_file:
+    icon_image_data = icon_image_file.read()
+    
 st.markdown(
     """
     <style>
