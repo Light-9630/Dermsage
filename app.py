@@ -86,4 +86,21 @@ st.markdown(
     """
     <style>
     body {
-        background-color: #E6E6
+        background-color: #E6E6FA;
+    }
+    .stApp {
+        background-color: transparent !important;
+    }
+    .sidebar .markdown-text-container {
+        background-color: #FFF8DC;
+    }
+    .sidebar h2 {
+        color: #FF69B4;
+    }
+    .sidebar p {
+        color: #333;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
