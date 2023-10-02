@@ -7,7 +7,8 @@ import tensorflow as tf
 model = tf.keras.models.load_model("trained_model.h5")
 
 # Title and Description
-st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage - Skin Disease Detection</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Diagnosis</h2>", unsafe_allow_html=True)
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
 # Get user's name
