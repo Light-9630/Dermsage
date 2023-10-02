@@ -16,6 +16,9 @@ hidden=""" <style>
             """
 st.markdown(hidden, unsafe_allow_html=True)
 
+# Dermsage logo and Title
+st.beta_set_page_config(page_title="Dermsage",page_icon=':smiley:')
+
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center; color:#0CAFFF;'>Transforming Skin Diagnosis</h2>", unsafe_allow_html=True)
