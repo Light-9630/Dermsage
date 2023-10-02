@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-# Load your trained CNN model (replace 'model.h5' with your model's file path)
+# Load your trained CNN model 
 @st.cache_resource
 def load_model():
     return tf.keras.models.load_model(r"C:\Users\praka\Desktop\trained_model.h5")
@@ -24,17 +24,17 @@ uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"]
 
 # Check if an image has been uploaded
 if uploaded_image is not None:
-    # Display the original uploaded image
+    
     st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
     
     # Create a spinner to display during model prediction
     with st.spinner("Predicting..."):
-        # Preprocess the image for model prediction (resize to 150x150 pixels)
+      
         image = Image.open(uploaded_image)
-        image_for_prediction = image.resize((224, 224))  # Resize for model prediction
+        image_for_prediction = image.resize((224, 224))  
         image_for_prediction = np.asarray(image_for_prediction)
         image_for_prediction = image_for_prediction / 255.0  # Normalize the image data
-        image_for_prediction = np.expand_dims(image_for_prediction, axis=0)  # Add batch dimension
+        image_for_prediction = np.expand_dims(image_for_prediction, axis=0) 
 
         # Make predictions
         prediction = model.predict(image_for_prediction)
@@ -69,7 +69,6 @@ st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li>A
 st.sidebar.markdown("<h2>Contact Us:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<p>If you have any questions or feedback, please email us at info@dermsage.com.</p>", unsafe_allow_html=True)
 
-# Customize the Streamlit theme (optional)
 st.markdown(
     """
     <style>
