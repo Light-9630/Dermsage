@@ -9,7 +9,7 @@ with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
 # Display the logo image
-st.image(icon_image_data, caption="Dermsage Logo", use_column_width=True)
+st.image(icon_image_data, use_column_width=True)
 
 
 # Title and Description
