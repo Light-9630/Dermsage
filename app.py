@@ -62,7 +62,7 @@ st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li>A
 
 # Contact Us
 st.sidebar.markdown("<h2>Contact Us:</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<p>If you have any questions or feedback, please email us at info@dermsage.com.</p>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>If you have any questions or feedback, please email us at dermsage@gmail.com.</p>", unsafe_allow_html=True)
 
 st.markdown(
     """
