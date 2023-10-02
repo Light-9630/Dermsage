@@ -52,7 +52,7 @@ if uploaded_image is not None:
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
 # Note
-st.markdown("<div style='border: 2px solid red; padding: 10px;'><p><strong>Note:</strong>The AI model used in this application is under development, and its accuracy is around 70%. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
+st.markdown("<div style='border: 2px solid red; padding: 7px;'><p><strong>Note:</strong>The AI model used in this application is under development. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p></div>", unsafe_allow_html=True)
 
 # About Dermsage
 st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
