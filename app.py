@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 # Load your trained CNN model 
-@st.cache_resource
+@st.cache
 model_url = 'https://github.com/Light-9630/Dermsage/raw/main/trained_model.h5'
 
 
