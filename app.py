@@ -38,22 +38,20 @@ user_name = st.text_input("Enter your name:")
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
 # Check if an image has been uploaded
+# Check if an image has been uploaded
 if uploaded_image is not None:
-    
-    st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
-    
-    # Create a spinner to display during model prediction
-    with st.spinner("Predicting..."):
-      
-        image = Image.open(uploaded_image)
-        image_for_prediction = image.resize((224, 224))  
-        image_for_prediction = np.asarray(image_for_prediction)
-        image_for_prediction = image_for_prediction / 255.0  # Normalize the image data
-        image_for_prediction = np.expand_dims(image_for_prediction, axis=0) 
+    # Convert RGBA image to RGB
+    image = Image.open(uploaded_image).convert("RGB")
+    # Resize the image to the desired dimensions
+    image_for_prediction = image.resize((224, 224))
+    # Convert to NumPy array
+    image_for_prediction = np.asarray(image_for_prediction)
+    image_for_prediction = image_for_prediction / 255.0  # Normalize the image data
+    image_for_prediction = np.expand_dims(image_for_prediction, axis=0)
 
-        # Make predictions
-        prediction = model.predict(image_for_prediction)
-    
+    # Make predictions
+    prediction = model.predict(image_for_prediction)
+            
     # Display the prediction
     st.success("Prediction Complete!")
     class_names = [
