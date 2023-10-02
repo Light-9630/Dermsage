@@ -8,20 +8,9 @@ model = tf.keras.models.load_model("trained_model.h5")
 
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage - Skin Disease Detection</h1>", unsafe_allow_html=True)
-
-# Note about the model (Highlighted Box)
-st.markdown(
-    """
-    <div style='background-color:#FFFF00; padding: 10px; text-align: center;'>
-    <p style='font-size: 18px; color: #333;'>Note: The AI model used in this application is under development, and its accuracy is around 70%. Please use the results as general information and consult a healthcare professional for accurate diagnosis and treatment.</p>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
 
-# Get user's name and age
+# Get user's name
 user_name = st.text_input("Enter your name:")
 
 # Upload Image
@@ -29,53 +18,49 @@ uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"]
 
 # Check if an image has been uploaded
 if uploaded_image is not None:
-
+    
     st.image(uploaded_image, caption="Uploaded Image", use_column_width=True)
-
+    
     # Create a spinner to display during model prediction
     with st.spinner("Predicting..."):
-
+      
         image = Image.open(uploaded_image)
-        image_for_prediction = image.resize((224, 224))
+        image_for_prediction = image.resize((224, 224))  
         image_for_prediction = np.asarray(image_for_prediction)
         image_for_prediction = image_for_prediction / 255.0  # Normalize the image data
-        image_for_prediction = np.expand_dims(image_for_prediction, axis=0)
+        image_for_prediction = np.expand_dims(image_for_prediction, axis=0) 
 
         # Make predictions
         prediction = model.predict(image_for_prediction)
-
+    
     # Display the prediction
     st.success("Prediction Complete!")
     
-    class_labels = [
-        "Acne / Rosacea",
+    class_names = [
+        "Acne and Rosacea",
         "Eczema",
-        "Normal Skin",
-        "Psoriasis / Lichen Planus",
-        "Fungal Infections",
+        "Normal",
+        "Psoriasis, Lichen Planus, and related diseases",
+        "Fungal Infections (Tinea, Ringworm, Candidiasis, and others)",
         "Vitiligo"
     ]
 
-    # Display the prediction and description
-    predicted_class = class_labels[np.argmax(prediction)]
-
-    class_descriptions = {
-        "Acne / Rosacea": "Skin condition characterized by pimples and redness.",
-        "Eczema": "Inflammatory skin condition causing itchiness and rash.",
-        "Normal Skin": "No specific skin conditions detected.",
-        "Psoriasis / Lichen Planus": "Skin conditions with distinctive rashes and scales.",
-        "Fungal Infections": "Fungal skin infections like ringworm and candidiasis.",
-        "Vitiligo": "Skin pigmentation loss resulting in white patches."
-    }
-
+    # Display the prediction
     st.markdown("<h2 style='text-align: center; color: #0CAFFF;'>Result:</h2>", unsafe_allow_html=True)
+    predicted_class = class_names[np.argmax(prediction)]
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>Hi {user_name},</strong></p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'>The image you uploaded is classified as:</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
-    # Display description for the predicted class
-    if predicted_class in class_descriptions:
-        st.markdown(f"<p style='font-size: 16px; color: #333; text-align: center;'>{class_descriptions[predicted_class]}</p>", unsafe_allow_html=True)
+# Note about model
+st.markdown(
+    """
+    <div style='border: 2px solid red; padding: 10px;'>
+        <p><strong>Note:</strong> This model is under development, and its accuracy is around 70%. Results may vary.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # About Dermsage
 st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
