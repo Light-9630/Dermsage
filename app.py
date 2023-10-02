@@ -26,15 +26,14 @@ with open("logo_streamlit.jpg", "rb") as image_file:
 with open("dermsage_icon.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
 
-# Create a layout with two columns: one for the icon and one for the logo
-# Create a layout with two columns: one for the icon and one for the logo
-col1, col2 = st.columns([1, 4])
+# Create a layout with two columns: one for the logo and one for the icon
+col1, col2 = st.columns([4, 1])
 
-# Display the icon in the first column
-col1.image(icon_image_data, use_column_width=True)
+# Display the Dermsage logo image in the first column
+col1.image(image_data, use_column_width=True)
 
-# Display the Dermsage logo image in the second column
-col2.image(image_data, use_column_width=True)
+# Display the icon in the second column
+col2.image(icon_image_data, use_column_width=True)
 
 
 
