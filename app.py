@@ -5,7 +5,7 @@ import tensorflow as tf
 
 # Load your trained CNN model 
 @st.cache_resource
-model_url = 'https://github.com/Light-9630/Dermsage/blob/main/trained_model.h5'
+model_url = r'https://github.com/Light-9630/Dermsage/blob/main/trained_model.h5'
 
 def load_model():
     return tf.keras.models.load_model(model_url)
