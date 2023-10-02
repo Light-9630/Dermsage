@@ -5,8 +5,10 @@ import tensorflow as tf
 
 # Load your trained CNN model 
 @st.cache_resource
+model_url = ''
+
 def load_model():
-    return tf.keras.models.load_model(r"C:\Users\praka\Desktop\trained_model.h5")
+    return tf.keras.models.load_model(model_url)
 
 # Load the model at app startup
 model = load_model()
