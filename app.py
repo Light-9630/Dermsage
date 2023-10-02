@@ -6,24 +6,12 @@ import tensorflow as tf
 # Load the CNN model
 model = tf.keras.models.load_model("trained_model.h5")
 
-# Add custom CSS to position the Refresh button
-st.markdown(
-    """
-    <style>
-    /* Add custom CSS for positioning the Refresh button */
-    .refresh-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
 # Title and Description
 st.markdown("<h1 style='text-align: center; color:#0CAFFF;'>Dermsage - Skin Disease Detection</h1>", unsafe_allow_html=True)
 st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
+
+# Get user's name
+user_name = st.text_input("Enter your name:")
 
 # Upload Image
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
@@ -63,9 +51,8 @@ if uploaded_image is not None:
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'>The image you uploaded is classified as:</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
-# Refresh button
-if st.button("Refresh"):
-    st.experimental_rerun()
+# Note
+st.markdown("<div style='border: 2px solid red; padding: 10px;'><p><strong>Note:</strong> This model is under development, and its accuracy is around 70%.</p></div>", unsafe_allow_html=True)
 
 # About Dermsage
 st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
