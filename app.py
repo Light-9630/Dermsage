@@ -48,13 +48,13 @@ if uploaded_image is not None:
     # Display the prediction
     st.success("Prediction Complete!")
     class_names = [
-        "Acne and Rosacea",
-        "Eczema",
-        "Normal",
-        "Psoriasis pictures Lichen Planus and related diseases",
-        "Tinea Ringworm Candidiasis and other Fungal Infections",
-        "Vitiligo"
-    ]
+    "Acne",
+    "Eczema",
+    "Normal Skin",
+    "Psoriasis & Lichen Planus",
+    "Fungal Infections",
+    "Vitiligo"
+]
 
     # Display the prediction
     st.markdown("<h3 style='text-align: center; color: #0CAFFF;'>Result</h3>", unsafe_allow_html=True)
