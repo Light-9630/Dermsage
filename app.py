@@ -24,7 +24,6 @@ user_name = st.text_input("Enter your name:")
 uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
 # Check if an image has been uploaded
-# Check if an image has been uploaded
 if uploaded_image is not None:
     # Convert RGBA image to RGB
     image = Image.open(uploaded_image).convert("RGB")
@@ -39,7 +38,8 @@ if uploaded_image is not None:
     prediction = model.predict(image_for_prediction)
             
     # Display the prediction
-    st.image(image, caption="Uploaded Image", use_column_width=True)
+    image_1= image.resize((224, 224))
+    st.image(image_1, caption="Uploaded Image", use_column_width=True)
     st.success("Prediction Complete!")
     class_names = [
     "Acne",
