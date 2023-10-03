@@ -55,7 +55,7 @@ if uploaded_image is not None:
     predicted_class_index = np.argmax(prediction)
     predicted_class = class_names[predicted_class_index]
     st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>Hi {user_name},</strong></p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><d>Condition:</d><strong style='font-size:black;'>{predicted_class}</strong></p></p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><b>Condition: </b><strong style='font-color:black;'>{predicted_class}</strong></p></p>", unsafe_allow_html=True)
     # st.markdown(f"<p style='font-size: 24px; color: black; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
     # Brief explanation about the predicted class
