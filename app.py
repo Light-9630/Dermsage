@@ -96,7 +96,7 @@ if uploaded_image is not None:
     prediction = model.predict(image_for_prediction)
 
     # Display the prediction
-     st.markdown(
+    st.markdown(
         f"<div style='display: flex; justify-content: center;'>"
         f"<img src='data:image/png;base64,{image_to_base64(image)}' alt='Uploaded Image' style='max-width: 200px;'/>"
         f"</div>",
