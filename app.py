@@ -149,4 +149,40 @@ st.sidebar.markdown(
 
 # Benefits
 st.sidebar.markdown("<h2 style='color:#5045F2;'>Benefits:</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li
+st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li>Accessible from anywhere.</li><li>Support for multiple skin conditions.</li></ul>", unsafe_allow_html=True)
+
+# Contact Us
+st.sidebar.markdown("<h2 style='color:#5045F2;'>Contact Us:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<p>If you have any questions or feedback, please email us at dermsage@gmail.com.</p>", unsafe_allow_html=True)
+
+# Terms of Service
+st.sidebar.markdown("<h2 style='color:#5045F2;'>Terms of Service:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("Please read and agree to our Terms of Service before using this service.")
+
+# Privacy Policy
+st.sidebar.markdown("<h2 style='color:#5045F2;'>Privacy Policy:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("We take your privacy seriously. Please read our Privacy Policy.")
+
+# Additional CSS styles for overall appearance
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #E6E6FA;
+    }
+    .stApp {
+        background-color: transparent !important;
+    }
+    .sidebar .markdown-text-container {
+        background-color: #FFF8DC;
+    }
+    .sidebar h2 {
+        color: #FF69B4;
+    }
+    .sidebar p {
+        color: #333;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
