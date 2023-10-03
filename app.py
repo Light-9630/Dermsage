@@ -111,7 +111,12 @@ if uploaded_image is not None:
         f"</div>",
         unsafe_allow_html=True
     )
-    st.success("Prediction Complete!")
+    st.markdown(
+    "<div style='text-align: center;'>"
+    "<p style='font-size: 18px; color: green;'>Prediction Complete!</p>"
+    "</div>",
+    unsafe_allow_html=True
+)
     class_names = [
         "Acne / Rosacea",
         "Eczema",
