@@ -96,7 +96,7 @@ if uploaded_image is not None:
     prediction = model.predict(image_for_prediction)
 
     # Display the prediction
-  st.image(
+    st.image(
         image,
         caption="Uploaded Image",
         width=300,  # Adjust width as needed
