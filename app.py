@@ -84,6 +84,14 @@ st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li>A
 st.sidebar.markdown("<h2 style='color:#5045F2;'>Contact Us:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<p>If you have any questions or feedback, please email us at dermsage@gmail.com.</p>", unsafe_allow_html=True)
 
+# Terms of Service
+st.header("Terms of Service")
+st.markdown("Please read and agree to our Terms of Service before using this service.")
+
+# Privacy Policy
+st.header("Privacy Policy")
+st.markdown("We take your privacy seriously. Please read our Privacy Policy.")
+
 st.markdown(
     """
     <style>
