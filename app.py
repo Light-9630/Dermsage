@@ -14,7 +14,7 @@ with open("logo_1.png", "rb") as icon_image_file:
 st.image(icon_image_data, use_column_width=True)
 
 # Title and Description
-st.markdown("<p style='font-size: 18px; color: #5045F2; text-align: center;'>Welcome to Dermsage!</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size: 22px; color: #5045F2; text-align: center;'>Welcome to Dermsage!</p>", unsafe_allow_html=True)
 
 # Get user's name
 st.markdown("<br>",unsafe_allow_html=True)
@@ -42,7 +42,7 @@ if uploaded_image is not None:
     st.image(image, caption="Uploaded Image",use_column_width=True)
     st.success("Prediction Complete!")
     class_names = [
-    "Acne",
+    "Acne / Rosacea",
     "Eczema",
     "Normal Skin",
     "Psoriasis/Lichen Planus",
@@ -51,11 +51,11 @@ if uploaded_image is not None:
 ]
 
     # Display the prediction
-    st.markdown("<h3 style='text-align: center; color: #0CAFFF;'>Result</h3>", unsafe_allow_html=True)
+    # st.markdown("<h3 style='text-align: center; color: #0CAFFF;'>Result</h3>", unsafe_allow_html=True)
     predicted_class_index = np.argmax(prediction)
     predicted_class = class_names[predicted_class_index]
-    st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><strong>Hi {user_name},</strong></p>", unsafe_allow_html=True)
-    st.markdown(f"<p style='font-size: 24px; color: #0CAFFF; text-align: center;'><b>Condition: </b><strong style='color:black;'>{predicted_class}</strong></p></p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><strong>Hi {user_name}, Thanks for visiting us!</strong></p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><b>Condition: </b><strong style='color:black;'>{predicted_class}</strong></p></p>", unsafe_allow_html=True)
     # st.markdown(f"<p style='font-size: 24px; color: black; text-align: center;'><strong>{predicted_class}</strong></p>", unsafe_allow_html=True)
 
     # Brief explanation about the predicted class
@@ -75,15 +75,15 @@ if uploaded_image is not None:
 
     
 # About Dermsage
-st.sidebar.markdown("<h2>About Dermsage:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 style='color:#5045F2;'>About Dermsage:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<p>Dermsage is an AI-powered skin disease detection service. We aim to provide quick and accurate skin disease diagnosis to our users.</p>", unsafe_allow_html=True)
 
 # Benefits
-st.sidebar.markdown("<h2>Benefits:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 style='color:#5045F2;'>Benefits:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li>Accessible from anywhere.</li><li>Support for multiple skin conditions.</li></ul>", unsafe_allow_html=True)
 
 # Contact Us
-st.sidebar.markdown("<h2>Contact Us:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 style='color:#5045F2;'>Contact Us:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<p>If you have any questions or feedback, please email us at dermsage@gmail.com.</p>", unsafe_allow_html=True)
 
 st.markdown(
