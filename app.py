@@ -141,22 +141,22 @@ if uploaded_image is not None:
     )
 
 # About Dermsage
-st.sidebar.markdown("<h2 class='header' style='color:#5045F2;'>About</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 class='header'>About</h2>", unsafe_allow_html=True)
 st.sidebar.markdown(
     "<p>Dermsage is an AI-powered skin disease detection service. We aim to provide quick and accurate skin disease diagnosis to our users.</p>",
     unsafe_allow_html=True,
 )
 
 # Benefits
-st.sidebar.markdown("<h2 class='header' style='color:#5045F2;'>Benefits:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 class='header' >Benefits:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<ul><li>Fast and reliable skin disease detection.</li><li>Accessible from anywhere.</li><li>Support for multiple skin conditions.</li></ul>", unsafe_allow_html=True)
 
 # Contact Us
-st.sidebar.markdown("<h2 class='header' style='color:#5045F2;'>Contact Us:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 class='header'>Contact Us:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<p>If you have any questions or feedback, please email us at dermsage@gmail.com.</p>", unsafe_allow_html=True)
 
 # Privacy Policy
-st.sidebar.markdown("<h2 class='header' style='color:#5045F2;'>Privacy Policy:</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 class='header'>Privacy Policy:</h2>", unsafe_allow_html=True)
 st.sidebar.markdown("<ul><li>Your data is safe.</li><li>We don't save anything.</li><li>We assure your privacy.</li></ul>", unsafe_allow_html=True)
 
 # Additional CSS styles for overall appearance
