@@ -6,6 +6,15 @@ import tensorflow as tf
 # Load the CNN model
 model = tf.keras.models.load_model("trained_model.h5")
 
+#defining image_to_base64
+import base64
+from io import BytesIO
+
+def image_to_base64(image):
+    buffered = BytesIO()
+    image.save(buffered, format="PNG")
+    return base64.b64encode(buffered.getvalue()).decode()
+
 # Showing the logo
 with open("logo_1.png", "rb") as icon_image_file:
     icon_image_data = icon_image_file.read()
