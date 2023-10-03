@@ -115,7 +115,7 @@ if uploaded_image is not None:
         unsafe_allow_html=True,
     )
     st.markdown(
-        f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><b>Here is your predicted skin condition: </b><strong style='color:black;'>{predicted_class}</strong></p></p>",
+        f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><b>Here is your predicted skin condition: </b><strong style='color:black;'><u>{predicted_class}</u></strong></p></p>",
         unsafe_allow_html=True,
     )
 
