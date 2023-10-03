@@ -72,7 +72,7 @@ st.markdown(
 )
 
 # Title and Description
-st.markdown("<p class='header'>Welcome to Dermsage!</p>", unsafe_allow_html=True)
+st.markdown("<p class='header' style='font-size:20px;'>Welcome to Dermsage!</p>", unsafe_allow_html=True)
 
 # Get user's name
 st.markdown("<br>", unsafe_allow_html=True)
