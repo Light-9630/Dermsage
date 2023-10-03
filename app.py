@@ -107,7 +107,7 @@ if uploaded_image is not None:
     # Display the prediction
     st.markdown(
         f"<div style='display: flex; justify-content: center;'>"
-        f"<img src='data:image/png;base64,{image_to_base64(image)}' alt='Uploaded Image' style='max-width: 200px;'/>"
+        f"<img src='data:image/png;base64,{image_to_base64(image)}' alt='Uploaded Image' style='max-width: 200px; caption="Uploaded image"'/>"
         f"</div>",
         unsafe_allow_html=True
     )
