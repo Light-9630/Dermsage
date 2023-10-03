@@ -161,7 +161,7 @@ st.sidebar.markdown("Please read and agree to our Terms of Service before using 
 
 # Privacy Policy
 st.sidebar.markdown("<h2 style='color:#5045F2;'>Privacy Policy:</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("We take your privacy seriously. Please read our Privacy Policy.")
+st.sidebar.markdown("<ul><li>Your data is safe.</li><li>We don't save anything.</li><li>We assure your privacy.</li></ul>", unsafe_allow_html=True)
 
 # Additional CSS styles for overall appearance
 st.markdown(
