@@ -113,7 +113,7 @@ if uploaded_image is not None:
     anchor=""
     #conditions for anchor tag
     if predicted_class=="Vitiligo":
-        anchor=="https://www.mayoclinic.org/diseases-conditions/vitiligo/symptoms-causes/syc-20355912"
+        anchor="https://www.mayoclinic.org/diseases-conditions/vitiligo/symptoms-causes/syc-20355912"
     elif predicted_class=="Psoriasis/Lichen Planus":
         anchor="https://www.mayoclinic.org/diseases-conditions/psoriasis/symptoms-causes/syc-20355840#:~:text=Psoriasis%20is%20a%20skin%20disease,make%20it%20hard%20to%20concentrate"
     elif predicted_class=="Acne / Rosacea":
