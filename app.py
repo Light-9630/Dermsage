@@ -99,7 +99,7 @@ if uploaded_image is not None:
     st.image(
         image,
         caption="Uploaded Image",
-        width=150,  # Adjust the width as needed
+        width=200,  
     )
     st.success("Prediction Complete!")
     class_names = [
@@ -115,6 +115,7 @@ if uploaded_image is not None:
     predicted_class_index = np.argmax(prediction)
     predicted_class = class_names[predicted_class_index]
     anchor=""
+    
     #conditions for anchor tag
     if predicted_class=="Vitiligo":
         anchor="https://www.mayoclinic.org/diseases-conditions/vitiligo/symptoms-causes/syc-20355912"
@@ -162,7 +163,7 @@ if uploaded_image is not None:
 # About Dermsage
 st.sidebar.markdown("<h2 class='header'>About</h2>", unsafe_allow_html=True)
 st.sidebar.markdown(
-    "<p>Dermsage is an AI-based tool for preliminary diagnosis of dermatological manifestations. We aim to provide quick and accurate skin disease diagnosis to our users.</p>",
+    "<p>Dermsage is an AI-based tool for preliminary diagnosis of dermatological manifestations. We aim to provide quick and accurate skin disease diagnosis to our users.</p><br>",
     unsafe_allow_html=True,
 )
 
