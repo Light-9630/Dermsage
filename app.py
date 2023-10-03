@@ -158,7 +158,7 @@ if uploaded_image is not None:
 # About Dermsage
 st.sidebar.markdown("<h2 class='header'>About</h2>", unsafe_allow_html=True)
 st.sidebar.markdown(
-    "<p>Dermsage is an AI-powered skin disease detection service. We aim to provide quick and accurate skin disease diagnosis to our users.</p>",
+    "<p>Dermsage is an AI-based tool for preliminary diagnosis of dermatological manifestations. We aim to provide quick and accurate skin disease diagnosis to our users.</p>",
     unsafe_allow_html=True,
 )
 
