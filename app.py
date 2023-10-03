@@ -14,7 +14,7 @@ with open("logo_1.png", "rb") as icon_image_file:
 st.image(icon_image_data, use_column_width=True)
 
 # Title and Description
-st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage! Upload an image to check for skin diseases.</p>", unsafe_allow_html=True)
+st.markdown("<p style='font-size: 18px; color: #333; text-align: center;'>Welcome to Dermsage!</p>", unsafe_allow_html=True)
 
 # Get user's name
 st.markdown("<br>",unsafe_allow_html=True)
