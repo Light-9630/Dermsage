@@ -110,12 +110,27 @@ if uploaded_image is not None:
     # Display the prediction
     predicted_class_index = np.argmax(prediction)
     predicted_class = class_names[predicted_class_index]
+    anchor=""
+    #conditions for anchor tag
+    if predicted_class=="Vitiligo":
+        anchor=="https://www.mayoclinic.org/diseases-conditions/vitiligo/symptoms-causes/syc-20355912"
+    elif predicted_class=="Psoriasis/Lichen Planus":
+        anchor="https://www.mayoclinic.org/diseases-conditions/psoriasis/symptoms-causes/syc-20355840#:~:text=Psoriasis%20is%20a%20skin%20disease,make%20it%20hard%20to%20concentrate"
+    elif predicted_class=="Acne / Rosacea":
+        anchor="https://www.mayoclinic.org/diseases-conditions/acne/symptoms-causes/syc-20368047#:~:text=Overview,but%20acne%20can%20be%20persistent"
+    elif predicted_class=="Eczema":
+        anchor="https://my.clevelandclinic.org/health/diseases/9998-eczema"
+    elif predicted_class=="Fungal Infections":
+        anchor="https://www.mayoclinic.org/diseases-conditions/ringworm-body/symptoms-causes/syc-20353780"
+    else:
+        anchor="#"
+    
     st.markdown(
         f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><strong>Hi {user_name}, Thanks for visiting us!</strong></p>",
         unsafe_allow_html=True,
     )
     st.markdown(
-        f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><b>Here is your predicted skin condition: </b><strong style='color:black;'><u>{predicted_class}</u></strong></p></p>",
+        f"<p style='font-size: 24px; color: #5045F2; text-align: center;'><b>Here is your predicted skin condition: </b><strong style='color:black;'><u><a href={anchor}>{predicted_class}</a></u></strong></p></p>",
         unsafe_allow_html=True,
     )
 
