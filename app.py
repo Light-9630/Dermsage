@@ -114,3 +114,57 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+st.markdown(
+    """
+    <style>
+    /* Custom CSS for the sidebar */
+    .sidebar .markdown-text-container {
+        background-color: #F5F5F5; /* Background color for the sidebar */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+
+    .sidebar h2 {
+        color: #5045F2; /* Header text color */
+        font-size: 20px; /* Header text size */
+    }
+
+    .sidebar p {
+        color: #333; /* Text color */
+        font-size: 14px; /* Text size */
+    }
+
+    /* Custom CSS for the main content area */
+    .main-content {
+        margin-left: 20px; /* Create some space between sidebar and content */
+    }
+
+    /* Custom CSS for the header */
+    .header {
+        background-color: #5045F2; /* Header background color */
+        color: white; /* Header text color */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    /* Custom CSS for buttons */
+    .sidebar button {
+        background-color: #5045F2; /* Button background color */
+        color: white; /* Button text color */
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    /* Custom CSS for button hover effect */
+    .sidebar button:hover {
+        background-color: #322EDF; /* Hover background color */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
