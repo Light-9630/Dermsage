@@ -96,11 +96,11 @@ if uploaded_image is not None:
     prediction = model.predict(image_for_prediction)
 
     # Display the prediction
-    st.markdown(
-        f"<div style='text-align: center;'>"
-        f"<img src='data:image/png;base64,{image_to_base64(image)}' alt='Uploaded Image' style='max-width: 300px; display: block; margin:auto;'/>"
-        f"</div>",
-        unsafe_allow_html=True
+   st.image(
+        image,
+        caption="Uploaded Image",
+        width=300,  # Adjust width as needed
+        use_column_width=True,  # Center the image in the column
     )
     st.success("Prediction Complete!")
     class_names = [
