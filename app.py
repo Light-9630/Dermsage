@@ -79,7 +79,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 user_name = st.text_input("Enter your name:")
 
 # Upload Image
-uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
+uploaded_image = st.file_uploader("Drag or upload image here", type=["jpg", "jpeg", "png"])
 
 # Check if an image has been uploaded
 if uploaded_image is not None:
