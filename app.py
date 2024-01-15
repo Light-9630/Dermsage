@@ -192,7 +192,7 @@ st.sidebar.markdown("<p>If you have any questions or feedback, please email us a
 
 # Privacy Policy
 st.sidebar.markdown("<h2 class='header'>Privacy</h2>", unsafe_allow_html=True)
-st.sidebar.markdown("<ul><li>Your data is safe.</li><li>We don't save anything.</li><li>We assure your privacy.</li></ul>", unsafe_allow_html=True)
+st.sidebar.markdown("<ul><li>We don't save anything.</li><li>We assure your privacy.</li></ul>", unsafe_allow_html=True)
 
 # Additional CSS styles for overall appearance
 st.markdown(
