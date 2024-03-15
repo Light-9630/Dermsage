@@ -197,6 +197,10 @@ st.sidebar.markdown("<ul><li>We don't save anything.</li><li>We assure your priv
 st.markdown(
     """
     <style>
+
+    #GithubIcon {
+  visibility: hidden;
+}
     body {
         background-color: #E6E6FA;
     }
