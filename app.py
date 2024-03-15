@@ -23,6 +23,9 @@ st.image(icon_image_data, use_column_width=True)
 # Custom CSS styling
 st.markdown(
     """
+     #GithubIcon {
+  visibility: hidden;
+}
     <style>
     /* Set the background color of the entire app */
     body {
@@ -197,10 +200,6 @@ st.sidebar.markdown("<ul><li>We don't save anything.</li><li>We assure your priv
 st.markdown(
     """
     <style>
-
-    #GithubIcon {
-  visibility: hidden;
-}
     body {
         background-color: #E6E6FA;
     }
