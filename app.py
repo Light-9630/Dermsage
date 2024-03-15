@@ -16,8 +16,7 @@ st.markdown(
     }
     </style>
     """,
-    unsafe_allow_html=True
-)
+    unsafe_allow_html=True)
 #defining image_to_base64
 import base64
 from io import BytesIO
