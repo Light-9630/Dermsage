@@ -27,9 +27,6 @@ st.image(icon_image_data, use_column_width=True)
 # Custom CSS styling
 st.markdown(
     """
-    #MainMenu {
-  visibility: hidden;
-}
 
     <style>
     /* Set the background color of the entire app */
