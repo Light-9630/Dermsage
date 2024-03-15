@@ -5,6 +5,14 @@ import tensorflow as tf
 
 # Load the CNN model
 # model = tf.keras.models.load_model("trained_model.h5")
+
+hide_github_icon = """
+#GithubIcon {
+  visibility: hidden;
+}
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 #defining image_to_base64
 import base64
 from io import BytesIO
@@ -23,9 +31,6 @@ st.image(icon_image_data, use_column_width=True)
 # Custom CSS styling
 st.markdown(
     """
-     #GithubIcon {
-  visibility: hidden;
-}
     <style>
     /* Set the background color of the entire app */
     body {
