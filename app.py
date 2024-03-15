@@ -4,10 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 # Load the CNN model
-# try:
-#     model = tf.keras.models.load_model("trained_model.h5")
-# except:
-#     st.markdown("HEllO THERE!")
+model = tf.keras.models.load_model("trained_model.h5")
 #defining image_to_base64
 import base64
 from io import BytesIO
