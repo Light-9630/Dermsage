@@ -3,11 +3,18 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 
+
+# Load the model
+# python -m pip install "tensorflow<2.11"
+
 # Load the CNN model
 # model = tf.keras.models.load_model("trained_model.h5")
 #defining image_to_base64
 import base64
 from io import BytesIO
+model = tf.keras.models.load_model('final_model_62.h5')
+model.save('final_model_saved')  # This saves the model in the SavedModel format
+model = tf.keras.models.load_model('final_model_saved')
 
 def image_to_base64(image):
     buffered = BytesIO()
@@ -103,7 +110,7 @@ if uploaded_image is not None:
 
     # Make predictions
     prediction = model.predict(image_for_prediction)
-
+    prediction = prediction.tolist()
     # Display the prediction
     st.markdown(
         f"<div style='display: flex; justify-content: center;'>"
